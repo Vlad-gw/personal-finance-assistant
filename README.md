@@ -28,7 +28,6 @@ Telegram-бот используется для быстрого добавле�
 
 Через Telegram-бота можно быстро добавлять доходы и расходы, смотреть баланс и историю, импортировать банковские выписки и экспортировать данные в Excel.
 
-
 ### Аналитика и прогнозирование
 
 <br>
@@ -48,8 +47,6 @@ Telegram-бот используется для быстрого добавле�
 <p align="center">
   <img src="docs/screenshots/forecast.png" width="40%">
 </p>
-
-
 
 ## Возможности
 
@@ -74,3 +71,45 @@ cd personal-finance-assistant
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
+
+Перед запуском необходимо настроить PostgreSQL и указать необходимые переменные окружения в файле `.env`.
+
+### Запуск Mini App и REST API
+
+В первом терминале:
+
+```bash
+cd web
+source .venv/bin/activate
+python manage.py runserver
+```
+
+Сервер будет запущен по адресу:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Создание публичного HTTPS-адреса
+
+Во втором терминале запустить Cloudflare Tunnel:
+
+```bash
+cloudflared tunnel --url http://127.0.0.1:8000
+```
+
+После запуска `cloudflared` появится публичная ссылка вида:
+
+```text
+https://example.trycloudflare.com
+```
+
+Эту ссылку необходимо вставить в файл `.env`:
+
+```env
+SITE_URL=https://example.trycloudflare.com
+MINI_APP_URL=https://example.trycloudflare.com
+```
+
+После изменения `.env` нужно перезапустить приложение, чтобы новые значения применились.
