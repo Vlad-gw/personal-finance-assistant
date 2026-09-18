@@ -1,49 +1,76 @@
 # Personal Finance Assistant
 
-Система для учёта, анализа и прогнозирования личных финансов на базе **Telegram-бота и Mini App**. Бот предназначен для быстрого ввода операций, а Mini App — для работы с историей, аналитикой, бюджетами и прогнозом расходов.
+Система для учёта, анализа и прогнозирования личных финансов на базе **Telegram-бота и Telegram Mini App**.
+
+Telegram-бот используется для быстрого добавления операций и повседневных действий, а Mini App — для работы с транзакциями, аналитикой, бюджетами и прогнозом расходов.
 
 ## Интерфейс
 
-### Mini App
-
 <p align="center">
-  <img src="docs/screenshots/miniapp-dashboard.jpg" width="38%">
-  &nbsp;&nbsp;
-  <img src="docs/screenshots/analytics.jpg" width="38%">
+  <img src="docs/screenshots/bot-start.png" width="23%">
+  &nbsp;
+  <img src="docs/screenshots/miniapp-home.png" width="23%">
+  &nbsp;
+  <img src="docs/screenshots/transactions.png" width="23%">
+  &nbsp;
+  <img src="docs/screenshots/analytics-categories.png" width="23%">
 </p>
 
 <p align="center">
-  Главная страница и финансовая аналитика
+  Telegram-бот · Главная · Транзакции · Аналитика
 </p>
 
 ### Telegram-бот
 
 <p align="center">
-  <img src="docs/screenshots/telegram-bot.jpg" width="55%">
+  <img src="docs/screenshots/bot-menu.png" width="70%">
+</p>
+
+Через Telegram-бота можно быстро добавлять доходы и расходы, смотреть баланс и историю, импортировать банковские выписки и экспортировать данные в Excel.
+
+<details>
+<summary><b>Больше скриншотов Mini App</b></summary>
+
+<br>
+
+<p align="center">
+  <img src="docs/screenshots/forecast.png" width="30%">
+  &nbsp;
+  <img src="docs/screenshots/analytics-period.png" width="30%">
+  &nbsp;
+  <img src="docs/screenshots/analytics-days.png" width="30%">
 </p>
 
 <p align="center">
-  Быстрый ввод операций, баланс, история, импорт выписок и экспорт в Excel
+  Прогноз расходов · Сравнение периодов · Расходы по дням
 </p>
+
+<p align="center">
+  <img src="docs/screenshots/analytics-changes.png" width="40%">
+</p>
+
+</details>
+
 ## Возможности
 
-- учёт доходов и расходов, история и фильтрация операций;
-- быстрый ввод через Telegram-бота;
-- аналитика, графики и бюджеты в Mini App;
-- импорт банковских PDF-выписок и экспорт данных в Excel;
-- автоматическая категоризация расходов и прогнозирование;
-- REST API, профиль пользователя, напоминания и административная панель.
+- учёт доходов и расходов;
+- история, поиск и фильтрация транзакций;
+- аналитика и графики;
+- бюджеты и прогнозирование расходов;
+- импорт банковских PDF-выписок;
+- экспорт данных в Excel;
+- автоматическая категоризация расходов;
+- шаблоны операций и напоминания;
+- REST API и административная панель.
 
 **Стек:** Python, aiogram 3, Django, Django REST Framework, PostgreSQL, JavaScript, Chart.js, scikit-learn, openpyxl, XlsxWriter.
 
-## Запуск
+## Запуск проекта
 
 ```bash
 git clone https://github.com/Vlad-gw/personal-finance-assistant.git
 cd personal-finance-assistant
 
 python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-
+source .venv/bin/activate
 pip install -r requirements.txt
-pip install -r web/requirements.txt
