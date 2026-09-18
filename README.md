@@ -1,108 +1,32 @@
-# Финансовый помощник
+# Personal Finance Assistant
 
-Проект представляет собой систему для учета личных финансов на основе Telegram-бота и Mini App.
+Система для учёта, анализа и прогнозирования личных финансов на базе **Telegram-бота и Mini App**. Бот предназначен для быстрого ввода операций, а Mini App — для работы с историей, аналитикой, бюджетами и прогнозом расходов.
 
-Через Telegram-бота пользователь может быстро добавлять доходы и расходы, смотреть баланс, историю операций, импортировать банковские выписки и выгружать данные в Excel.  
-Mini App используется для более удобного просмотра аналитики, бюджета, графиков и прогноза расходов.
+## Интерфейс
 
-## Материалы проекта
+| Telegram-бот | Mini App | Аналитика |
+|---|---|---|
+| <img src="docs/screenshots/telegram-bot.jpg" width="260"> | <img src="docs/screenshots/miniapp-dashboard.jpg" width="260"> | <img src="docs/screenshots/analytics.jpg" width="260"> |
 
-- [Отчет по ВКР](ВКР%20Гаврилова%20Владислава%20Сергеевича.pdf)
-- [Презентация по ВКР](Презентация%20ВКР%20Гаврилова%20Владислава%20Сергеевича.pdf)
+## Возможности
 
-## Как запустить проект
+- учёт доходов и расходов, история и фильтрация операций;
+- быстрый ввод через Telegram-бота;
+- аналитика, графики и бюджеты в Mini App;
+- импорт банковских PDF-выписок и экспорт данных в Excel;
+- автоматическая категоризация расходов и прогнозирование;
+- REST API, профиль пользователя, напоминания и административная панель.
 
-### 1. Клонировать проект
+**Стек:** Python, aiogram 3, Django, Django REST Framework, PostgreSQL, JavaScript, Chart.js, scikit-learn, openpyxl, XlsxWriter.
+
+## Запуск
 
 ```bash
-git clone https://github.com/Vlad-gw/VP_TgBot_with_miniApp_and_Admins.git
-cd VP_TgBot_with_miniApp_and_Admins
-```
+git clone https://github.com/Vlad-gw/personal-finance-assistant.git
+cd personal-finance-assistant
 
-### 2. Создать виртуальное окружение
-
-```bash
 python3 -m venv .venv
-source .venv/bin/activate
-```
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 
-Для Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-### 3. Установить зависимости
-
-```bash
 pip install -r requirements.txt
-```
-
-### 4. Создать базу данных PostgreSQL
-
-Создать базу данных:
-
-```bash
-createdb -U postgres finance_bot
-```
-
-Выполнить SQL-скрипт:
-
-```bash
-psql -U postgres -d finance_bot -f database/init_db.sql
-```
-
-### 5. Создать файл `.env`
-
-В корне проекта создать файл `.env`:
-
-```env
-BOT_TOKEN=your_telegram_bot_token
-
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=finance_bot
-DB_USER=postgres
-DB_PASS=your_password
-
-ADMIN_IDS=123456789
-
-AUTH_CODE_PEPPER=your_secret_pepper
-SITE_URL=http://127.0.0.1:8000
-MINI_APP_URL=http://127.0.0.1:8000/miniapp/
-```
-
-### 6. Запустить Telegram-бота
-
-```bash
-python main.py
-```
-
-## Как запустить Mini App
-
-Перейти в папку веб-приложения:
-
-```bash
-cd web
-```
-
-Установить зависимости:
-
-```bash
-pip install -r requirements.txt
-```
-
-Создать файл `.env` в папке `web` с такими же настройками базы данных.
-
-Запустить сервер:
-
-```bash
-python manage.py runserver
-```
-
-После запуска Mini App и админ-панель будут доступны по адресам:
-
-```text
-http://127.0.0.1:8000/miniapp/
-http://127.0.0.1:8000/admin/
-```
+pip install -r web/requirements.txt
