@@ -34,7 +34,7 @@ Telegram-бот используется для быстрого добавле�
 <br>
 
 <p align="center">
-  <img src="docs/screenshots/forecast.png" width="30%">
+  <img src="docs/screenshots/analytics-changes.png" width="30%">
   &nbsp;
   <img src="docs/screenshots/analytics-period.png" width="30%">
   &nbsp;
@@ -46,7 +46,7 @@ Telegram-бот используется для быстрого добавле�
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/analytics-changes.png" width="40%">
+  <img src="docs/screenshots/forecast.png" width="40%">
 </p>
 
 </details>
