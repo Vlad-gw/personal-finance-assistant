@@ -4,10 +4,27 @@
 
 ## Интерфейс
 
-| Telegram-бот | Mini App | Аналитика |
-|---|---|---|
-| <img src="docs/screenshots/telegram-bot.jpg" width="260"> | <img src="docs/screenshots/miniapp-dashboard.jpg" width="260"> | <img src="docs/screenshots/analytics.jpg" width="260"> |
+### Mini App
 
+<p align="center">
+  <img src="docs/screenshots/miniapp-dashboard.jpg" width="38%">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/analytics.jpg" width="38%">
+</p>
+
+<p align="center">
+  Главная страница и финансовая аналитика
+</p>
+
+### Telegram-бот
+
+<p align="center">
+  <img src="docs/screenshots/telegram-bot.jpg" width="55%">
+</p>
+
+<p align="center">
+  Быстрый ввод операций, баланс, история, импорт выписок и экспорт в Excel
+</p>
 ## Возможности
 
 - учёт доходов и расходов, история и фильтрация операций;
